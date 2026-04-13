@@ -1,0 +1,10 @@
+name: csv-tools-ai-mcp
+description: "MEOK AI Labs — CSV parsing and conversion utilities powered by MEOK AI Labs."
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/csv-tools-ai-mcp
+license: MIT
+categories: [Data Processing, Utilities]
+tags: [csv, csv-processing, data-transformation, spreadsheet-tools, etl]
+runtime: python
+entrypoint: server.py
