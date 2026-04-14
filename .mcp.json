@@ -1,23 +1,86 @@
 {
   "name": "csv-tools-ai-mcp",
-  "description": "MEOK AI Labs \u2014 CSV parsing and conversion utilities powered by MEOK AI Labs.",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/csv-tools-ai-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
+  "description": "CSV parsing, header validation, delimiter detection, and JSON conversion.",
+  "version": "1.0.0",
   "tools": [
-    "parse_csv",
-    "validate_headers",
-    "detect_delimiter",
-    "convert_to_json"
-  ],
-  "categories": [
-    "Data Processing",
-    "Utilities"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+    {
+      "name": "parse_csv",
+      "description": "Parse CSV content and return structured data with statistics.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "has_header": {
+            "type": "boolean"
+          },
+          "max_rows": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "content"
+        ]
+      }
+    },
+    {
+      "name": "validate_headers",
+      "description": "Validate that CSV headers match expected column names.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "expected_headers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "content",
+          "expected_headers"
+        ]
+      }
+    },
+    {
+      "name": "detect_delimiter",
+      "description": "Auto-detect the delimiter used in a CSV/DSV file.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "content"
+        ]
+      }
+    },
+    {
+      "name": "convert_to_json",
+      "description": "Convert CSV content to JSON array of objects.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "has_header": {
+            "type": "boolean"
+          },
+          "max_rows": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "content"
+        ]
+      }
+    }
+  ]
 }

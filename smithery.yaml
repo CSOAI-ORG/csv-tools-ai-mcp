@@ -1,10 +1,43 @@
 name: csv-tools-ai-mcp
-description: "MEOK AI Labs — CSV parsing and conversion utilities powered by MEOK AI Labs."
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/csv-tools-ai-mcp
-license: MIT
-categories: [Data Processing, Utilities]
-tags: [csv, csv-processing, data-transformation, spreadsheet-tools, etl]
-runtime: python
-entrypoint: server.py
+description: CSV parsing, header validation, delimiter detection, and JSON conversion.
+version: 1.0.0
+tools:
+- name: parse_csv
+  description: Parse CSV content and return structured data with statistics.
+  parameters:
+  - name: content
+    type: string
+    required: true
+  - name: has_header
+    type: boolean
+    required: false
+  - name: max_rows
+    type: integer
+    required: false
+- name: validate_headers
+  description: Validate that CSV headers match expected column names.
+  parameters:
+  - name: content
+    type: string
+    required: true
+  - name: expected_headers
+    type: array
+    required: true
+- name: detect_delimiter
+  description: Auto-detect the delimiter used in a CSV/DSV file.
+  parameters:
+  - name: content
+    type: string
+    required: true
+- name: convert_to_json
+  description: Convert CSV content to JSON array of objects.
+  parameters:
+  - name: content
+    type: string
+    required: true
+  - name: has_header
+    type: boolean
+    required: false
+  - name: max_rows
+    type: integer
+    required: false

@@ -3,6 +3,11 @@ CSV Tools AI MCP Server
 CSV parsing and conversion utilities powered by MEOK AI Labs.
 """
 
+
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
+from auth_middleware import check_access
+
 import csv
 import io
 import json
@@ -26,7 +31,7 @@ def _check_rate_limit(tool_name: str) -> None:
 
 
 @mcp.tool()
-def parse_csv(content: str, has_header: bool = True, max_rows: int = 100) -> dict:
+def parse_csv(content: str, has_header: bool = True, max_rows: int = 100, api_key: str = "") -> dict:
     """Parse CSV content and return structured data with statistics.
 
     Args:
@@ -34,6 +39,10 @@ def parse_csv(content: str, has_header: bool = True, max_rows: int = 100) -> dic
         has_header: Whether the first row is a header (default True)
         max_rows: Maximum rows to return (default 100)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("parse_csv")
     reader = csv.reader(io.StringIO(content))
     rows = list(reader)
@@ -57,13 +66,17 @@ def parse_csv(content: str, has_header: bool = True, max_rows: int = 100) -> dic
 
 
 @mcp.tool()
-def validate_headers(content: str, expected_headers: list[str]) -> dict:
+def validate_headers(content: str, expected_headers: list[str], api_key: str = "") -> dict:
     """Validate that CSV headers match expected column names.
 
     Args:
         content: CSV string content
         expected_headers: List of expected header names
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("validate_headers")
     reader = csv.reader(io.StringIO(content))
     rows = list(reader)
@@ -80,12 +93,16 @@ def validate_headers(content: str, expected_headers: list[str]) -> dict:
 
 
 @mcp.tool()
-def detect_delimiter(content: str) -> dict:
+def detect_delimiter(content: str, api_key: str = "") -> dict:
     """Auto-detect the delimiter used in a CSV/DSV file.
 
     Args:
         content: CSV/DSV string content to analyze
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("detect_delimiter")
     sample = content[:5000]
     lines = sample.split('\n')[:10]
@@ -107,7 +124,7 @@ def detect_delimiter(content: str) -> dict:
 
 
 @mcp.tool()
-def convert_to_json(content: str, has_header: bool = True, max_rows: int = 500) -> dict:
+def convert_to_json(content: str, has_header: bool = True, max_rows: int = 500, api_key: str = "") -> dict:
     """Convert CSV content to JSON array of objects.
 
     Args:
@@ -115,6 +132,10 @@ def convert_to_json(content: str, has_header: bool = True, max_rows: int = 500) 
         has_header: Whether the first row is a header
         max_rows: Maximum rows to convert (default 500)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("convert_to_json")
     reader = csv.reader(io.StringIO(content))
     rows = list(reader)
