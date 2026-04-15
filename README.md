@@ -1,24 +1,35 @@
 # CSV Tools AI MCP Server
 
-CSV parsing, header validation, delimiter detection, and JSON conversion.
+> By [MEOK AI Labs](https://meok.ai) — CSV parsing, conversion, and data extraction utilities
 
-## Tools
-
-- **parse_csv**
-- **validate_headers**
-- **detect_delimiter**
-- **convert_to_json**
-
-## Quick Start
+## Installation
 
 ```bash
-pip install mcp
+pip install csv-tools-ai-mcp
+```
+
+## Usage
+
+```bash
 python server.py
 ```
 
-## Rate Limits
+## Tools
 
-- Free tier: 50 calls/day per tool
-- Upgrade: https://meok.ai/pricing
+### `parse_csv`
+Parse CSV content and return structured data with column statistics.
 
-Built by [MEOK AI Labs](https://meok.ai)
+**Parameters:**
+- `content` (str): CSV string content
+- `has_header` (bool): Whether the first row is a header (default True)
+- `max_rows` (int): Maximum rows to return (default 100)
+
+Additional tools for CSV conversion, filtering, and data transformation are available. See `server.py` for the full tool catalog.
+
+## Authentication
+
+Free tier: 50 calls/day. Upgrade at [meok.ai/pricing](https://meok.ai/pricing) for unlimited access.
+
+## License
+
+MIT — MEOK AI Labs
