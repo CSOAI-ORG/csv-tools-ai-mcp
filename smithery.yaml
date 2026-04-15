@@ -1,5 +1,6 @@
 name: csv-tools-ai-mcp
-description: MEOK AI Labs MCP Server
+description: AI-powered csv tools ai MCP server for agents. Supports parse csv, validate
+  headers, detect delimiter. By MEOK AI Labs.
 version: 1.0.0
 tools:
 - name: parse_csv
