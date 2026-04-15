@@ -1,0 +1,53 @@
+{
+  "name": "csv-tools-ai",
+  "description": "Csv Tools Ai tools powered by MEOK AI Labs.",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/csv-tools-ai-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "parse_csv",
+      "description": "Parse CSV content and return structured data with statistics."
+    },
+    {
+      "name": "validate_headers",
+      "description": "Validate that CSV headers match expected column names."
+    },
+    {
+      "name": "detect_delimiter",
+      "description": "Auto-detect the delimiter used in a CSV/DSV file."
+    },
+    {
+      "name": "convert_to_json",
+      "description": "Convert CSV content to JSON array of objects."
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning",
+    "Data & Analytics"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}
