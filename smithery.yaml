@@ -1,5 +1,5 @@
 name: csv-tools-ai-mcp
-description: CSV parsing, header validation, delimiter detection, and JSON conversion.
+description: MEOK AI Labs MCP Server
 version: 1.0.0
 tools:
 - name: parse_csv
