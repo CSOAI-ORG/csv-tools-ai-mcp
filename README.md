@@ -1,35 +1,38 @@
-# CSV Tools AI MCP Server
+<div align="center">
 
-> By [MEOK AI Labs](https://meok.ai) — CSV parsing, conversion, and data extraction utilities
+[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/csv-tools-ai-mcp)](https://github.com/CSOAI-ORG/csv-tools-ai-mcp/stargazers)
+
+# ucsvU toolsU aiU mcp
+
+****
+
+[![npm version](https://img.shields.io/npm/v/@meok-ai/csv-tools-ai-mcp)](https://www.npmjs.com/package/@meok-ai/csv-tools-ai-mcp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
+
+[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/csv-tools-ai-mcp/issues)
+
+</div>
+
+---
 
 ## Installation
 
 ```bash
 pip install csv-tools-ai-mcp
+# or
+npm install -g @meok-ai/csv-tools-ai-mcp
 ```
 
-## Usage
+## Quick Start
 
-```bash
-python server.py
-```
+See the project repository for full documentation and examples.
 
-## Tools
+## Enterprise Support
 
-### `parse_csv`
-Parse CSV content and return structured data with column statistics.
-
-**Parameters:**
-- `content` (str): CSV string content
-- `has_header` (bool): Whether the first row is a header (default True)
-- `max_rows` (int): Maximum rows to return (default 100)
-
-Additional tools for CSV conversion, filtering, and data transformation are available. See `server.py` for the full tool catalog.
-
-## Authentication
-
-Free tier: 50 calls/day. Upgrade at [meok.ai/pricing](https://meok.ai/pricing) for unlimited access.
+- 📧 nicholas@csoai.org
+- 🌐 [CSOAI.org](https://csoai.org)
 
 ## License
 
-MIT — MEOK AI Labs
+MIT © [CSOAI](https://csoai.org)
