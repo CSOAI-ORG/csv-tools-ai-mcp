@@ -1,45 +1,59 @@
-[![csv-tools-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/csv-tools-ai-mcp/badges/score.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/csv-tools-ai-mcp)
-[![MCP Registry](https://img.shields.io/badge/MCP_Registry-Published-green)](https://registry.modelcontextprotocol.io)
-[![PyPI](https://img.shields.io/pypi/v/csv-tools-ai-mcp)](https://pypi.org/project/csv-tools-ai-mcp/)
-
-[![csv-tools-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/csv-tools-ai-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/csv-tools-ai-mcp)
-
 <div align="center">
 
-[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/csv-tools-ai-mcp)](https://github.com/CSOAI-ORG/csv-tools-ai-mcp/stargazers)
+# Csv Tools Ai MCP
 
-# ucsvU toolsU aiU mcp
+**CSV Tools AI MCP Server**
 
-****
-
-[![npm version](https://img.shields.io/npm/v/@meok-ai/csv-tools-ai-mcp)](https://www.npmjs.com/package/@meok-ai/csv-tools-ai-mcp)
+[![PyPI](https://img.shields.io/pypi/v/meok-csv-tools-ai-mcp)](https://pypi.org/project/meok-csv-tools-ai-mcp/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
-
-[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/csv-tools-ai-mcp/issues)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-MCP_Server-purple)](https://meok.ai)
 
 </div>
 
----
+## Overview
+
+CSV Tools AI MCP Server
+CSV parsing and conversion utilities powered by MEOK AI Labs.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `parse_csv` | Parse CSV content and return structured data with statistics. |
+| `validate_headers` | Validate that CSV headers match expected column names. |
+| `detect_delimiter` | Auto-detect the delimiter used in a CSV/DSV file. |
+| `convert_to_json` | Convert CSV content to JSON array of objects. |
 
 ## Installation
 
 ```bash
-pip install csv-tools-ai-mcp
-# or
-npm install -g @meok-ai/csv-tools-ai-mcp
+pip install meok-csv-tools-ai-mcp
 ```
 
-## Quick Start
+## Usage with Claude Desktop
 
-See the project repository for full documentation and examples.
+Add to your Claude Desktop MCP config (`claude_desktop_config.json`):
 
-## Enterprise Support
+```json
+{
+  "mcpServers": {
+    "csv-tools-ai": {
+      "command": "python",
+      "args": ["-m", "meok_csv_tools_ai_mcp.server"]
+    }
+  }
+}
+```
 
-- 📧 nicholas@csoai.org
-- 🌐 [CSOAI.org](https://csoai.org)
+## Usage with FastMCP
+
+```python
+from mcp.server.fastmcp import FastMCP
+
+# This server exposes 4 tool(s) via MCP
+# See server.py for full implementation
+```
 
 ## License
 
-MIT © [CSOAI](https://csoai.org)
-<!-- mcp-name: io.github.CSOAI-ORG/csv-tools-ai-mcp -->
+MIT © [MEOK AI Labs](https://meok.ai)
