@@ -5,7 +5,6 @@ CSV parsing and conversion utilities powered by MEOK AI Labs.
 
 
 import sys, os
-sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
 from auth_middleware import check_access
 
 import csv
@@ -14,6 +13,15 @@ import json
 import time
 from collections import defaultdict, Counter
 from mcp.server.fastmcp import FastMCP
+
+STRIPE_199 = "https://buy.stripe.com/00wfZjcgAeUW4c5cyQ8k90K"
+
+def _add_upgrade_tail(response, tier="free"):
+    """Append upgrade nudge to free-tier success responses."""
+    if isinstance(response, dict) and tier == "free":
+        response["_upgrade_note"] = "Pro tier: unlimited calls + priority support. Upgrade: " + STRIPE_199
+    return response
+
 
 mcp = FastMCP("csv-tools-ai", instructions="MEOK AI Labs MCP Server")
 
@@ -70,7 +78,7 @@ def parse_csv(content: str, has_header: bool = True, max_rows: int = 100, api_ke
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     _check_rate_limit("parse_csv")
     reader = csv.reader(io.StringIO(content))
@@ -133,7 +141,7 @@ def validate_headers(content: str, expected_headers: list[str], api_key: str = "
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     _check_rate_limit("validate_headers")
     reader = csv.reader(io.StringIO(content))
@@ -188,7 +196,7 @@ def detect_delimiter(content: str, api_key: str = "") -> dict:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     _check_rate_limit("detect_delimiter")
     sample = content[:5000]
@@ -250,7 +258,7 @@ def convert_to_json(content: str, has_header: bool = True, max_rows: int = 500, 
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     _check_rate_limit("convert_to_json")
     reader = csv.reader(io.StringIO(content))
@@ -280,5 +288,8 @@ def convert_to_json(content: str, has_header: bool = True, max_rows: int = 500, 
             "truncated": len(data_rows) > max_rows, "columns": headers}
 
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()
