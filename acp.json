@@ -1,0 +1,22 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "csv-tools-ai-mcp",
+    "description": "Csv Tools Ai MCP Server by MEOK AI Labs",
+    "version": "1.0.7",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "csv-tools-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "parse_csv",
+      "validate_headers",
+      "detect_delimiter",
+      "convert_to_json"
+    ]
+  }
+}

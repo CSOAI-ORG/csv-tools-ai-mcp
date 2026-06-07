@@ -1,0 +1,59 @@
+{
+  "name": "csv-tools-ai-mcp",
+  "description": "Csv Tools Ai MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/csv-tools-ai-mcp.html",
+  "version": "1.0.7",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "parse_csv",
+      "name": "Parse Csv",
+      "description": "parse_csv via csv-tools-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "validate_headers",
+      "name": "Validate Headers",
+      "description": "validate_headers via csv-tools-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "detect_delimiter",
+      "name": "Detect Delimiter",
+      "description": "detect_delimiter via csv-tools-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "convert_to_json",
+      "name": "Convert To Json",
+      "description": "convert_to_json via csv-tools-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}
