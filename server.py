@@ -1,6 +1,4 @@
 """
-Buy Pro: https://www.csoai.org/checkout
-
 CSV Tools AI MCP Server
 CSV parsing and conversion utilities powered by MEOK AI Labs.
 """

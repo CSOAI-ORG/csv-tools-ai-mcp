@@ -1,31 +1,33 @@
-# Csv Tools Ai MCP
-
-> Csv Tools MCP — automation tooling for csv tools
-
-`csv-tools-ai-mcp` is a Model Context Protocol (MCP) server by MEOK AI Labs.
+# csv-tools-ai-mcp
+# CSV parsing and conversion utilities powered by MEOK AI Labs.
 
 ## Install
-
 ```bash
 pip install csv-tools-ai-mcp
 ```
 
-Or run without installing:
-
-```bash
-uvx csv-tools-ai-mcp
-```
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
 
 ## Tools
 
-- `parse_csv` — Parse CSV content and return structured data with statistics.
-- `validate_headers` — Validate that CSV headers match expected column names.
-- `detect_delimiter` — Auto-detect the delimiter used in a CSV/DSV file.
-- `convert_to_json` — Convert CSV content to JSON array of objects.
+### `parse_csv`
+Parse CSV content and return structured data with statistics.
 
-## Links
+### `validate_headers`
+Validate that CSV headers match expected column names.
 
-- Source: https://github.com/CSOAI-ORG/csv-tools-ai-mcp
-- PyPI: https://pypi.org/project/csv-tools-ai-mcp/
-- MEOK AI Labs: https://meok.ai
-- Council of AI: https://councilof.ai
+### `detect_delimiter`
+Auto-detect the delimiter used in a CSV/DSV file.
+
+### `convert_to_json`
+Convert CSV content to JSON array of objects.
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.

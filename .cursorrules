@@ -1,0 +1,9 @@
+# csv-tools-ai-mcp - Auto-trigger Rules
+
+When the user asks about csv tools, use csv-tools-ai-mcp tools: parse_csv, validate_headers, detect_delimiter, convert_to_json
+
+CSV parsing and conversion utilities powered by MEOK AI Labs.
+
+Install: `pip install csv-tools-ai-mcp`
+
+By MEOK AI Labs — MIT licensed.
