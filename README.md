@@ -113,3 +113,28 @@ Free tier: 10 calls/day per MCP. Pro tier (£79/mo): unlimited + cryptographical
 
 <!-- BUY-LADDER:END -->
 
+
+
+## Configuration
+
+Add to your `claude_desktop_config.json` (Claude Desktop) or your MCP client config:
+
+```json
+{
+  "mcpServers": {
+    "csv-tools-ai-mcp": {
+      "command": "uvx",
+      "args": ["csv-tools-ai-mcp"]
+    }
+  }
+}
+```
+
+Or: `pip install csv-tools-ai-mcp` then run the `csv-tools-ai-mcp` command (stdio transport).
+
+## Examples
+
+Once configured, ask your assistant, for example:
+- "Use `parse_csv` to …"
+- "Use `validate_headers` to …"
+- "Use `detect_delimiter` to …"
